@@ -22,7 +22,14 @@
 
         // Method to calculate the number of days in a year (accounting for leap years)
         private static long daysInYear(int year) {
-            return isLeapYear(year) ? 366 : 365;
+           // return isLeapYear(year) ? 366 : 365;
+           if(isLeapYear(year))
+           {
+            return 366;
+           }
+           else{
+            return 365;
+           }
         }
 
          // Method to calculate the number of days in a month (accounting for leap years)
@@ -33,7 +40,11 @@
                 case 4, 6, 9, 11:
                     return 30;
                 case 2:
-                    return isLeapYear(year) ? 29 : 28;
+                    if(isLeapYear(year)){
+                        return 29;
+                    }else{
+                        return 28;
+                    }
                 default:
                     throw new IllegalArgumentException("Invalid month: " + month);
             }
